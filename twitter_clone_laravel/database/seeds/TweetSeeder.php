@@ -1,16 +1,17 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use \App\tweets;
 
-class DatabaseSeeder extends Seeder
+class TweetSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this->call(TweetsSeed::class);
+        factory(tweets::class, 15)->make();
     }
 }
