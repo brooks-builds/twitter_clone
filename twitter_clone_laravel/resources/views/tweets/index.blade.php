@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('main')
-    <h1>Tweets'</h1>
+    <h1>Tweets</h1>
     <main>
         @foreach ($tweets as $tweet)
             <section>

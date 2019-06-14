@@ -13,6 +13,9 @@
         <li><a href="/">Home</a></li>
         <li><a href="/login">Login</a></li>
         <li><a href="/register">Register</a></li>
+        @if (Auth::check())
+            <li><a href="/tweets/create">Write a tweet</a></li>
+        @endif
     </ul>
 
     @section('main')

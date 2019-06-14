@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\tweets;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TweetsController extends Controller
 {
@@ -28,7 +29,12 @@ class TweetsController extends Controller
      */
     public function create()
     {
-        //
+        if (!Auth::check())
+        {
+            return redirect('/login');
+        }
+
+        return view('tweets.create');
     }
 
     /**
@@ -39,7 +45,21 @@ class TweetsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(!Auth::check())
+        {
+            return redirect('/login');
+        }
+
+        $request->validate([
+            'text' => 'required|max:25'
+        ]);
+
+        tweets::create([
+            'text' => $request->text,
+            'user_id' => 1
+        ]);
+
+        return redirect('/tweets');
     }
 
     /**
