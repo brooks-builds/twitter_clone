@@ -8,5 +8,5 @@ Learning programming languages and frameworks by implementing the bare essential
 -   [x] As a tweeter, I want to send a tweet
 -   [x] As a visitor, I want to see comments on a tweet
 -   [x] As a tweeter, I want to add a comment to a tweet
--   [ ] As a tweeter, I want to update my tweet in case I mispelled it
+-   [x] As a tweeter, I want to update my tweet in case I mispelled it
 -   [ ] As a tweeter, I want to delete my tweet

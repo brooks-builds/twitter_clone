@@ -14,4 +14,14 @@ class tweets extends Model
     {
         return $this->hasMany('\App\Comment');
     }
+
+    public function user()
+    {
+        return $this->belongsTo('\App\User');
+    }
+
+    public function setTextAttribute($text)
+    {
+        $this->attributes['text'] = $text;
+    }
 }

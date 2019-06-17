@@ -81,9 +81,11 @@ class TweetsController extends Controller
      * @param  \App\tweets  $tweets
      * @return \Illuminate\Http\Response
      */
-    public function edit(tweets $tweets)
+    public function edit($id)
     {
-        //
+        $tweet = tweets::find($id);
+
+        return view('tweets.edit', ['tweet' => $tweet]);
     }
 
     /**
@@ -93,9 +95,17 @@ class TweetsController extends Controller
      * @param  \App\tweets  $tweets
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tweets $tweets)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'text' => 'required|max:25'
+        ]);
+
+        $tweet = tweets::find($id);
+        $tweet->text = $request->text;
+        $tweet->save();
+
+        return redirect("/tweets/$id");
     }
 
     /**
