@@ -17,6 +17,7 @@ class TweetsController extends Controller
     {
         $tweets = tweets::join('users', 'users.id', '=', 'tweets.user_id')
             ->select('tweets.*', 'users.name')
+            ->orderBy('created_at', 'desc')
             ->get();
 
         return view('tweets.index', ['tweets' => $tweets]);
