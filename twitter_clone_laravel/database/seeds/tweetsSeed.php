@@ -13,6 +13,6 @@ class TweetsSeed extends Seeder
      */
     public function run()
     {
-        factory(tweets::class, 15)->create()->make();
+        factory(tweets::class, 1)->create()->make();
     }
 }

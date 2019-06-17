@@ -69,9 +69,10 @@ class TweetsController extends Controller
      * @param  \App\tweets  $tweets
      * @return \Illuminate\Http\Response
      */
-    public function show(tweets $tweets)
+    public function show($id)
     {
-        //
+        $tweet = tweets::find($id);
+        return view('tweets.show', ['tweet' => $tweet]);
     }
 
     /**
