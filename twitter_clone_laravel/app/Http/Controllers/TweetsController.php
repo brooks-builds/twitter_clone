@@ -114,8 +114,10 @@ class TweetsController extends Controller
      * @param  \App\tweets  $tweets
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tweets $tweets)
+    public function destroy($id)
     {
-        //
+        tweets::where(['id' => $id])->delete();
+
+        return redirect('/tweets');
     }
 }
