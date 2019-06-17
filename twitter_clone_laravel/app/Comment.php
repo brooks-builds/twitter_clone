@@ -15,4 +15,8 @@ class Comment extends Model
     {
         return $this->belongsTo('\App\User');
     }
+
+    protected $fillable = [
+        'user_id', 'text', 'tweets_id'
+    ];
 }

@@ -7,7 +7,7 @@
             <section>
                 <hr>
                 <header>{{ $tweet->name }}</header>
-                <div>{{ $tweet->text }}</div>
+                <div><a href="/tweets/{{ $tweet->id }}">{{ $tweet->text }}</a></div>
                 <hr>
             </section>
         @endforeach
